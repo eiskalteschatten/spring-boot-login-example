@@ -16,14 +16,14 @@ import java.util.List;
 @Table(name="roles")
 public class Role {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @Column(nullable=false, unique=true)
-    private String name;
+  @Column(nullable=false, unique=true)
+  private String name;
 
-    @ManyToMany(mappedBy="roles")
-    private List<User> users;
+  @ManyToMany(mappedBy="roles")
+  private List<User> users;
 
 }
