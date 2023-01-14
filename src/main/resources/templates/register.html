@@ -7,7 +7,7 @@
    )}"
 >
   <head>
-      <title>Login</title>
+      <title>Register</title>
   </head>
   <body>
     <main id="mainContent" class="d-flex align-items-center justify-content-center h-100">
@@ -20,7 +20,7 @@
             You have been logged out.
         </div>
 
-        <form th:action="@{/login}" method="post" class="vstack gap-4">
+        <form th:action="@{/register}" method="post" class="vstack gap-4">
           <div>
             <label for="username" class="form-label">
               User Name:
@@ -35,9 +35,9 @@
             <input type="password" name="password" class="form-control w-100" />
           </div>
 
-          <input type="submit" value="Log In" class="btn btn-primary" />
+          <input type="submit" value="Register" class="btn btn-primary" />
 
-          <a th:href="@{/register}">Register</a>
+          <a th:href="@{/login}">Login</a>
         </form>
       </div>
     </main>
