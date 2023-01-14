@@ -5,7 +5,8 @@ import com.alexseifert.blog.entity.Role;
 import com.alexseifert.blog.entity.User;
 import com.alexseifert.blog.repository.RoleRepository;
 import com.alexseifert.blog.repository.UserRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -17,11 +18,11 @@ public class UserServiceImpl implements UserService {
 
   private UserRepository userRepository;
   private RoleRepository roleRepository;
-  private PasswordEncoder passwordEncoder;
+  private BCryptPasswordEncoder passwordEncoder;
 
   public UserServiceImpl(UserRepository userRepository,
                           RoleRepository roleRepository,
-                          PasswordEncoder passwordEncoder) {
+                          BCryptPasswordEncoder passwordEncoder) {
     this.userRepository = userRepository;
     this.roleRepository = roleRepository;
     this.passwordEncoder = passwordEncoder;
