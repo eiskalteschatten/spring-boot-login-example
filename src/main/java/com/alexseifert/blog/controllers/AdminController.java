@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 public class AdminController {
 
   @GetMapping("/")
-  public String admin() {
-    return "admin";
+  public String index() {
+    return "admin/index";
   }
 
 }
