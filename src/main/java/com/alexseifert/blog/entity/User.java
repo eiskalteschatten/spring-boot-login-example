@@ -6,8 +6,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 @Getter
 @Setter
@@ -33,5 +38,13 @@ public class User {
           joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
           inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
   private List<Role> roles = new ArrayList<>();
+
+  @CreatedDate
+  @Column(name="created_at", nullable=false, updatable=false)
+  private Date createdAt;
+
+  @LastModifiedDate
+  @Column(name="updated_at")
+  private LocalDateTime updatedAt;
 
 }
